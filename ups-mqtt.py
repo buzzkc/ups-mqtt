@@ -53,8 +53,7 @@ def process():
         timestamp = time.time()
         msgs.append((base_topic + 'timestamp', timestamp, 0, True))
         msgs.append((base_topic + 'lastUpdate', datetime.datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S %Z'), 0, True))
-        mqtt.multiple(msgs, hostname=mqtt_host, port=mqtt_port, auth={'username': mqtt_user, 'password': mqtt_password})
-
+        mqtt.multiple(msgs, hostname=mqtt_host, port=mqtt_port)
 
 
 while True:
